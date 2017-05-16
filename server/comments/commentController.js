@@ -3,7 +3,7 @@ var Comment = require('./commentModel.js');
 module.exports={
 
 createComment:function(req,res){
-	Comment.findOne({title:req.body.title})
+	Comment.findOne({user:req.body.user})
 	.exec(function(err,comment){
 		if(comment){
 			res.json(new Error('Comment was created before'))
